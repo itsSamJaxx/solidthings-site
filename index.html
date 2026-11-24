@@ -3,150 +3,132 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Solid Things</title>
-<meta name="description" content="Solid Things designs and makes useful things that make the stuff you already own better than it came. Made in Britain.">
-<meta property="og:title" content="Solid Things">
-<meta property="og:description" content="Better than it came. Useful things for real life, made in Britain.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f4d36'/%3E%3Crect x='16' y='16' width='32' height='32' rx='3' fill='none' stroke='%23f2efe6' stroke-width='5'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<title>Solid Things: put the phone down, pick something up</title>
+<meta name="description" content="Solid Things makes real things for the real world. Designed in Britain, printed layer by layer, and only made when you ask for them.">
+<meta property="og:title" content="Put the phone down. Pick something up.">
+<meta property="og:description" content="Real things for the real world, from Solid Things.">
+<meta property="og:image" content="https://www.solidthings.co.uk/chess.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 72'%3E%3Cpath fill='%23163a28' d='M6 10h9v10H6zM25 10h9v10h-9zM44 10h9v10h-9zM6 23h47v8H6zM12 34h35v16H12zM3 53h53v9H3z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap">
 <style>
-/* Layout: a solid green slab on top (the promise), then a quiet paper column: what we do, how we do it, what we're working on, get in touch. */
-:root {
-  --paper: #f2efe6;
-  --paper-2: #e8e4d8;
-  --ink: #18231d;
-  --muted: #55625a;
-  --green: #1f4d36;
-  --green-deep: #163a28;
-  --on-green: #f2efe6;
-  --line: #cfcabb;
-  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root { --paper: #121a15; --paper-2: #18231c; --ink: #e9ece6; --muted: #9fb0a5; --line: #2b3a31; --green: #1f4d36; --green-deep: #0f2a1c; --on-green: #f2efe6; color-scheme: dark; }
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; }
-body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
-.in { max-width: 980px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
-a { color: inherit; }
-a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-
-.hero { position: relative; overflow: hidden; background: var(--green-deep); color: var(--on-green); padding-top: calc(env(safe-area-inset-top, 0px) + 28px); padding-bottom: 88px; min-height: min(86vh, 760px); display: flex; }
-.hero > .in { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; }
-.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-.hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(14,36,25,.55) 0%, rgba(14,36,25,.25) 40%, rgba(14,36,25,.8) 100%); }
-.hero h1 { margin-top: auto; padding-top: 72px; }
-@media (prefers-reduced-motion: reduce) { .hero-video { display: none; } }
-.bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-.mark { display: block; color: var(--on-green); text-decoration: none; }
-.mark svg { height: 44px; width: auto; display: block; }
-.bar nav a { font-size: 15px; opacity: .85; text-decoration: none; }
-.bar nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-.pause { font: inherit; font-size: 15px; color: inherit; background: none; border: 0; padding: 0; opacity: .85; cursor: pointer; }
-.pause:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-.film { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--green-deep); border-radius: 6px; }
-.bar nav a:hover { opacity: 1; text-decoration: underline; }
-h1 { font-family: var(--display); font-weight: 800; font-size: clamp(48px, 11vw, 112px); line-height: .92; letter-spacing: -.03em; margin: 0 0 24px; text-shadow: 0 2px 24px rgba(0,0,0,.25); text-wrap: balance; }
-.hero p { font-size: clamp(18px, 2.4vw, 22px); max-width: 34ch; margin: 0; opacity: .92; }
-.stamp { align-self: flex-start; display: inline-block; margin-top: 36px; font-family: var(--display); font-weight: 700; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; border: 1.5px solid var(--on-green); border-radius: 3px; padding: 6px 10px; }
-
-section { padding: 72px 0; border-bottom: 1px solid var(--line); }
-.label { font-family: var(--display); font-weight: 700; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--green); margin: 0 0 14px; }
-@media (prefers-color-scheme: dark) { .label { color: #8cc5a3; } }
-h2 { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4.5vw, 44px); line-height: 1.05; letter-spacing: -.02em; margin: 0 0 20px; max-width: 20ch; text-wrap: balance; }
-.lead { max-width: 60ch; margin: 0; }
-.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 36px; }
-.cols div { min-width: 0; border-top: 3px solid var(--ink); padding-top: 14px; }
-.cols h3 { font-family: var(--display); font-weight: 700; font-size: 19px; margin: 0 0 6px; }
-.cols p { margin: 0; color: var(--muted); }
-.list { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 0; }
-.list li { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--line); }
-.list li:last-child { border-bottom: 1px solid var(--line); }
-.list strong { font-family: var(--display); font-weight: 700; font-size: 19px; display: block; }
-.list span { color: var(--muted); font-size: 15px; }
-.tag { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-.contact { background: var(--paper-2); }
-.email { font-family: var(--display); font-weight: 800; font-size: clamp(22px, 4.5vw, 38px); letter-spacing: -.01em; overflow-wrap: anywhere; text-decoration-thickness: 2px; text-underline-offset: 6px; }
-footer { padding: 32px 0 calc(env(safe-area-inset-bottom, 0px) + 32px); font-size: 14px; color: var(--muted); }
-footer .in { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-@media (max-width: 520px) { .list li { grid-template-columns: 1fr; gap: 4px; } }
+/* Layout: a human photograph first, then short posters of plain words; photographs carry the feeling, green carries the brand. */
+:root { --green:#163a28; --cream:#f2efe6; --ink:#17221c; --muted:#59655d; --line:#cbc7b8; --pop:#12a043; --d:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif; --b:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--cream); color:var(--ink); font:400 18px/1.55 var(--b); }
+a { color:inherit; }
+a:focus-visible, button:focus-visible { outline:3px solid var(--pop); outline-offset:4px; }
+.in { max-width:1080px; margin:0 auto; padding-left:max(22px,env(safe-area-inset-left,0px)); padding-right:max(22px,env(safe-area-inset-right,0px)); }
+h1,h2 { font-family:var(--d); font-weight:800; letter-spacing:-.035em; line-height:.95; margin:0; text-wrap:balance; }
+.hero { position:relative; min-height:min(94vh,860px); background:#1c140d; color:var(--cream); overflow:hidden; display:flex; }
+.hero video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(15,12,8,.6) 0,rgba(15,12,8,.12) 35%,rgba(15,12,8,.82) 100%); }
+.hero .in { position:relative; z-index:1; width:100%; display:flex; flex-direction:column; padding-top:26px; padding-bottom:56px; }
+.bar { display:flex; justify-content:space-between; align-items:center; gap:16px 24px; flex-wrap:wrap; }
+.mark svg { display:block; height:42px; width:auto; }
+.bar nav { display:flex; gap:20px; font-size:15px; }
+.bar nav a, .quiet { color:inherit; text-decoration:none; font:inherit; font-size:15px; background:none; border:0; padding:0; cursor:pointer; opacity:.9; }
+.bar nav a:hover, .quiet:hover { text-decoration:underline; }
+.hero h1 { margin-top:auto; padding-top:120px; font-size:clamp(46px,9.4vw,108px); }
+.hero p { font-size:clamp(18px,2.2vw,23px); margin:22px 0 0; max-width:34ch; }
+.say { background:var(--green); color:var(--cream); padding:clamp(72px,11vw,140px) 0; }
+.say h2 { font-size:clamp(38px,6.6vw,78px); max-width:15ch; }
+.say p { max-width:46ch; margin:30px 0 0; font-size:clamp(18px,2vw,21px); opacity:.9; }
+section.plain { padding:clamp(64px,9vw,112px) 0; }
+section.plain h2 { font-size:clamp(32px,5vw,58px); max-width:18ch; }
+.pics { display:grid; grid-template-columns:1.35fr 1fr; gap:18px; margin-top:40px; }
+.pics figure { margin:0; min-width:0; }
+.pics figure.wide { grid-column:1 / -1; }
+.pics img { display:block; width:100%; height:100%; max-height:560px; object-fit:cover; border-radius:4px; }
+.pics figure { display:flex; flex-direction:column; gap:8px; }
+.pics .ph { flex:1; min-height:0; overflow:hidden; border-radius:4px; }
+figcaption { font-family:var(--d); font-weight:500; font-size:19px; letter-spacing:-.01em; }
+.film { display:block; width:100%; aspect-ratio:16/9; margin-top:36px; background:#000; border-radius:4px; }
+.made { display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,72px); align-items:center; }
+.made > * { min-width:0; }
+.made img { width:100%; border-radius:4px; display:block; }
+.made p { margin:20px 0 0; max-width:44ch; }
+.bench { list-style:none; margin:36px 0 0; padding:0; border-top:2px solid var(--ink); }
+.bench li { padding:20px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 1.3fr; gap:6px 32px; }
+.bench b { font-family:var(--d); font-weight:800; font-size:22px; letter-spacing:-.02em; line-height:1.2; }
+.bench span { color:var(--muted); }
+.ask { background:var(--green); color:var(--cream); padding:clamp(72px,10vw,120px) 0; }
+.ask h2 { font-size:clamp(34px,5.6vw,66px); max-width:16ch; }
+.ask a { display:inline-block; margin-top:30px; font-family:var(--d); font-weight:800; font-size:clamp(21px,4.4vw,38px); letter-spacing:-.02em; overflow-wrap:anywhere; text-decoration-thickness:2px; text-underline-offset:7px; }
+footer { padding:30px 0 calc(34px + env(safe-area-inset-bottom,0px)); font-size:14px; color:var(--muted); }
+footer p { margin:0 0 6px; } footer .bye { color:var(--ink); font-weight:600; }
+@media (max-width:640px) { .pics,.made,.bench li { grid-template-columns:1fr; } .hero h1 { padding-top:80px; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
 <header class="hero">
-  <video class="hero-video" id="heroVideo" src="promo.mp4" poster="poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <video id="loop" src="promo.mp4" poster="poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
   <div class="in">
     <div class="bar">
-      <a class="mark" href="/" aria-label="Solid Things home">
-        <svg viewBox="0 0 360 96" aria-hidden="true"><g transform="translate(8 8)"><path d="M40 0 L80 20 L40 40 L0 20 Z" fill="currentColor" opacity=".55"/><path d="M0 20 L40 40 L40 80 L0 60 Z" fill="currentColor" opacity=".8"/><path d="M80 20 L40 40 L40 80 L80 60 Z" fill="currentColor"/></g><text x="104" y="52" font-family="Archivo, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="38" letter-spacing="-0.5" fill="currentColor">Solid Things</text><text x="106" y="78" font-family="Archivo, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="12.5" letter-spacing="3.2" fill="currentColor" opacity=".75">MADE IN BRITAIN</text></svg>
-      </a>
-      <nav><button class="pause" id="pause" type="button">Pause film</button><a href="#film">Watch the film</a><a href="#contact">Get in touch</a></nav>
+      <a class="mark" href="/" aria-label="Solid Things home"><svg viewBox="0 0 300 70" aria-hidden="true"><g fill="currentColor"><path d="M6 10h9v10H6zM25 10h9v10h-9zM44 10h9v10h-9zM6 23h47v8H6zM12 34h35v16H12zM3 53h53v9H3z"/><text x="70" y="50" font-family="'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="37" letter-spacing="-1">Solid Things</text></g></svg></a>
+      <nav><button class="quiet" id="pause" type="button">Pause film</button><a href="#film">Watch it</a><a href="#ask">Say hello</a></nav>
     </div>
-    <h1>Better than it came.</h1>
-    <p>Useful, solid things that fix the little annoyances in the stuff you already own. Designed and made in Britain.</p>
-    <span class="stamp">Made in Britain</span>
+    <h1>Put the phone down. Pick something up.</h1>
+    <p>Solid Things makes real things for the real world. The bit with mud, mates and mugs of tea.</p>
   </div>
 </header>
 
 <main>
-  <section id="film">
-    <div class="in">
-      <p class="label">The film</p>
-      <h2>Ten seconds of Solid Things.</h2>
-      <video class="film" src="film.mp4" poster="poster.jpg" controls playsinline preload="none" aria-label="Solid Things promo film"></video>
-    </div>
-  </section>
+  <section class="say"><div class="in">
+    <h2>Nobody ever framed a screenshot.</h2>
+    <p>The good stuff doesn't happen in your pocket. It's the game that goes on too long. The thing you fixed together. The story that gets worse every time it's told. It never makes the highlights. It is the highlights.</p>
+    <p>We make solid, useful things for that part of your life. They don't need charging, updating or your email address. They don't want your attention. They'd rather you had it back.</p>
+  </div></section>
 
-  <section>
-    <div class="in">
-      <p class="label">What we do</p>
-      <h2>Real things for real life, away from the screen.</h2>
-      <p class="lead">Your van, your kit, the kids' room: most things are nearly right. We design the missing piece that makes them work properly, then make it to last. Less scrolling, more doing.</p>
-      <div class="cols">
-        <div><h3>We listen first</h3><p>We start with the things people keep grumbling about in reviews and forums, not with a clever idea of our own.</p></div>
-        <div><h3>You tell us what to make</h3><p>We show an idea before we make it. If enough people say "I'd buy that", it goes into production.</p></div>
-        <div><h3>Made to order</h3><p>Every piece is made in small batches in Britain, so there's no warehouse of things nobody wanted.</p></div>
-      </div>
+  <section class="plain"><div class="in">
+    <h2>Best seen with both eyes.</h2>
+    <div class="pics">
+      <figure class="wide"><div class="ph"><img src="chess.jpg" alt="A hand sets a green printed rook on a chessboard while a grandmother and teenager laugh" loading="lazy"></div><figcaption>Your move.</figcaption></figure>
+      <figure><div class="ph"><img src="bike.jpg" alt="A father and daughter laugh while mending a bicycle, with a dog in the way" loading="lazy"></div><figcaption>No tutorial required. Probably.</figcaption></figure>
+      <figure><div class="ph"><img src="fire.jpg" alt="Four friends laugh around a fire on an allotment" loading="lazy"></div><figcaption>Four people. Full signal.</figcaption></figure>
     </div>
-  </section>
+  </div></section>
 
-  <section>
-    <div class="in">
-      <p class="label">On the workbench</p>
-      <h2>Ideas we're testing now.</h2>
-      <p class="lead">None of these is for sale yet. They're being designed, and the ones people ask for are made first.</p>
-      <ul class="list">
-        <li><div><strong>Campervan dashboard table</strong><span>A fold-down table for the dash of large panel vans. Breakfast, maps, a laptop, parked up.</span></div><span class="tag">In design</span></li>
-        <li><div><strong>Figure shelf with the magnets sealed in</strong><span>For kids' audio figure collections. Nothing to come loose.</span></div><span class="tag">In design</span></li>
-        <li><div><strong>Satellite dish holder for a roof window</strong><span>Keeps a compact dish inside the van, under the glass. Nothing outside to fit or steal.</span></div><span class="tag">In design</span></li>
-      </ul>
-    </div>
-  </section>
+  <section class="plain" id="film" style="padding-top:0"><div class="in">
+    <h2>Seventeen seconds. Then off you go.</h2>
+    <video class="film" src="film.mp4" poster="tin.jpg" controls playsinline preload="none" aria-label="Solid Things film: a phone goes in a tin, a chess rook is printed layer by layer, and people play"></video>
+  </div></section>
 
-  <section class="contact" id="contact">
-    <div class="in">
-      <p class="label">Get in touch</p>
-      <h2>Something you own that's nearly right?</h2>
-      <p class="lead">Tell us what annoys you about it. The best fixes start with someone's grumble.</p>
-      <p><a class="email" href="mailto:hello@solidthings.co.uk">hello@solidthings.co.uk</a></p>
+  <section class="plain" style="padding-top:0"><div class="in made">
+    <img src="rook.jpg" alt="A green chess rook with fine printed layer lines" loading="lazy">
+    <div>
+      <h2>Made when someone wants it.</h2>
+      <p>We start with a proper grumble: something you own that's nearly right. We design the fix in Britain and show it to you first.</p>
+      <p>If enough of you want it, we'll print it, one thin layer at a time. If you don't, we won't. The world has enough tat.</p>
     </div>
-  </section>
+  </div></section>
+
+  <section class="plain" style="padding-top:0"><div class="in">
+    <h2>On the bench.</h2>
+    <ul class="bench">
+      <li><b>A shelf for story figures</b><span>For the little characters that tell kids stories without a screen. We want nothing on it that can come loose.</span></li>
+      <li><b>A table where there isn't one</b><span>Folds down for breakfast, maps and cards. Folds away when you're done.</span></li>
+    </ul>
+    <p style="color:var(--muted)">Still being designed. Not for sale yet.</p>
+  </div></section>
+
+  <section class="ask" id="ask"><div class="in">
+    <h2>What do you own that's nearly right?</h2>
+    <a href="mailto:hello@solidthings.co.uk">hello@solidthings.co.uk</a>
+  </div></section>
 </main>
 
-<footer>
-  <div class="in">
-    <span>© 2026 Solid Things. A trading name of Hammington Ltd.</span>
-    <span>The film on this page is an AI-made concept, not real footage.</span>
-  </div>
-</footer>
+<footer><div class="in">
+  <p class="bye">No pop-ups. Nothing to sign up to. You can close this tab now.</p>
+  <p>© 2026 Solid Things, a trading name of Hammington Ltd. The film and pictures are AI-made concepts, not real customers or products.</p>
+</div></footer>
 <script>
-const hv = document.getElementById("heroVideo"), pb = document.getElementById("pause");
-if (matchMedia("(prefers-reduced-motion: reduce)").matches) { hv.pause(); pb.hidden = true; }
-pb.addEventListener("click", () => { if (hv.paused) { hv.play(); pb.textContent = "Pause film"; } else { hv.pause(); pb.textContent = "Play film"; } });
+const v=document.getElementById("loop"),b=document.getElementById("pause"),set=()=>b.textContent=v.paused?"Play film":"Pause film";
+v.addEventListener("play",set);v.addEventListener("pause",set);
+if(matchMedia("(prefers-reduced-motion: reduce)").matches){v.autoplay=false;v.pause();}
+b.addEventListener("click",()=>v.paused?v.play():v.pause());
 </script>
 </body>
 </html>

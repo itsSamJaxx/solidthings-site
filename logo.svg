@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="Solid Things">
-  <title>Solid Things</title>
-  <!-- Placeholder logo (23 Nov 2026) until the real one is designed (S-044): an isometric solid block, three faces in three tones of one colour. -->
-  <g transform="translate(8 8)">
-    <path d="M40 0 L80 20 L40 40 L0 20 Z" fill="currentColor" opacity=".55"/>
-    <path d="M0 20 L40 40 L40 80 L0 60 Z" fill="currentColor" opacity=".8"/>
-    <path d="M80 20 L40 40 L40 80 L80 60 Z" fill="currentColor"/>
-  </g>
-  <text x="104" y="52" font-family="Archivo, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="38" letter-spacing="-0.5" fill="currentColor">Solid Things</text>
-  <text x="106" y="78" font-family="Archivo, 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="12.5" letter-spacing="3.2" fill="currentColor" opacity=".75">MADE IN BRITAIN</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" role="img" aria-label="Solid Things"><title>Solid Things</title><!-- Placeholder logo (24 Nov 2026) until S-044: a rook laid in solid courses, like a print. --><g fill="currentColor"><path d="M6 10h9v10H6zM25 10h9v10h-9zM44 10h9v10h-9zM6 23h47v8H6zM12 34h35v16H12zM3 53h53v9H3z"/><text x="70" y="50" font-family="'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="37" letter-spacing="-1">Solid Things</text></g></svg>
