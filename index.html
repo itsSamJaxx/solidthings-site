@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Solid Things: put the phone down, pick something up</title>
-<meta name="description" content="Solid Things makes real things for the real world. Designed in Britain, printed layer by layer, and only made when you ask for them.">
-<meta property="og:title" content="Put the phone down. Pick something up.">
+<title>Solid Things: we make the missing bit</title>
+<meta name="description" content="Solid, useful things that fix one annoying problem each. No app, no charger. Designed in Britain, and only made if you want them.">
+<meta property="og:title" content="Your stuff is nearly brilliant. We make the missing bit.">
 <meta property="og:description" content="Real things for the real world, from Solid Things.">
 <meta property="og:image" content="https://www.solidthings.co.uk/chess.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 72'%3E%3Cpath fill='%23163a28' d='M6 10h9v10H6zM25 10h9v10h-9zM44 10h9v10h-9zM6 23h47v8H6zM12 34h35v16H12zM3 53h53v9H3z'/%3E%3C/svg%3E">
@@ -30,10 +30,26 @@ h1,h2 { font-family:var(--d); font-weight:800; letter-spacing:-.035em; line-heig
 .bar nav { display:flex; gap:20px; font-size:15px; }
 .bar nav a, .quiet { color:inherit; text-decoration:none; font:inherit; font-size:15px; background:none; border:0; padding:0; cursor:pointer; opacity:.9; }
 .bar nav a:hover, .quiet:hover { text-decoration:underline; }
-.hero h1 { margin-top:auto; padding-top:120px; font-size:clamp(46px,9.4vw,108px); }
-.hero p { font-size:clamp(18px,2.2vw,23px); margin:22px 0 0; max-width:34ch; }
+.hero h1 { margin-top:auto; padding-top:110px; font-size:clamp(42px,7.4vw,86px); max-width:15ch; }
+.hero p { font-size:clamp(18px,2.2vw,23px); margin:22px 0 0; max-width:40ch; }
+.go { margin-top:28px!important; }
+.btn { display:inline-block; background:var(--cream); color:var(--green); font-family:var(--d); font-weight:800; font-size:19px; padding:14px 22px; border-radius:4px; text-decoration:none; }
+.btn:hover { background:#fff; }
+.narrow { max-width:720px; }
+.letter { padding:clamp(64px,9vw,112px) 0; font-size:clamp(19px,2.1vw,23px); }
+.letter h2 { font-size:clamp(36px,5.6vw,62px); margin-bottom:30px; }
+.letter p { margin:0 0 20px; }
+.letter .big { font-family:var(--d); font-weight:800; letter-spacing:-.025em; line-height:1.08; font-size:clamp(29px,4.4vw,46px); margin:40px 0; text-wrap:balance; }
+.lead { font-size:clamp(18px,2vw,21px); margin:18px 0 0; max-width:52ch; }
+.rules { margin:44px 0 0; padding:0; list-style:none; counter-reset:r; display:grid; gap:0; }
+.rules li { counter-increment:r; display:grid; grid-template-columns:52px 1fr 1.5fr; gap:4px 24px; padding:20px 0; border-top:1px solid rgba(242,239,230,.28); align-items:baseline; }
+.rules li::before { content:counter(r); font-family:var(--d); font-weight:800; font-size:24px; opacity:.65; }
+.rules b { font-family:var(--d); font-weight:800; font-size:24px; letter-spacing:-.02em; line-height:1.15; }
+.rules span { font-size:18px; opacity:.92; }
+.bench em { font-style:normal; color:var(--ink); font-weight:600; }
+.ask p { margin:22px 0 0; max-width:44ch; font-size:20px; }
 .say { background:var(--green); color:var(--cream); padding:clamp(72px,11vw,140px) 0; }
-.say h2 { font-size:clamp(38px,6.6vw,78px); max-width:15ch; }
+.say h2 { font-size:clamp(32px,5vw,58px); max-width:20ch; }
 .say p { max-width:46ch; margin:30px 0 0; font-size:clamp(18px,2vw,21px); opacity:.9; }
 section.plain { padding:clamp(64px,9vw,112px) 0; }
 section.plain h2 { font-size:clamp(32px,5vw,58px); max-width:18ch; }
@@ -58,7 +74,7 @@ figcaption { font-family:var(--d); font-weight:500; font-size:19px; letter-spaci
 .ask a { display:inline-block; margin-top:30px; font-family:var(--d); font-weight:800; font-size:clamp(21px,4.4vw,38px); letter-spacing:-.02em; overflow-wrap:anywhere; text-decoration-thickness:2px; text-underline-offset:7px; }
 footer { padding:30px 0 calc(34px + env(safe-area-inset-bottom,0px)); font-size:14px; color:var(--muted); }
 footer p { margin:0 0 6px; } footer .bye { color:var(--ink); font-weight:600; }
-@media (max-width:640px) { .pics,.made,.bench li { grid-template-columns:1fr; } .hero h1 { padding-top:80px; } }
+@media (max-width:640px) { .pics,.made,.bench li { grid-template-columns:1fr; } .hero h1 { padding-top:80px; } .rules li { grid-template-columns:34px 1fr; } .rules span { grid-column:2; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
@@ -70,52 +86,70 @@ footer p { margin:0 0 6px; } footer .bye { color:var(--ink); font-weight:600; }
       <a class="mark" href="/" aria-label="Solid Things home"><svg viewBox="0 0 300 70" aria-hidden="true"><g fill="currentColor"><path d="M6 10h9v10H6zM25 10h9v10h-9zM44 10h9v10h-9zM6 23h47v8H6zM12 34h35v16H12zM3 53h53v9H3z"/><text x="70" y="50" font-family="'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="37" letter-spacing="-1">Solid Things</text></g></svg></a>
       <nav><button class="quiet" id="pause" type="button">Pause film</button><a href="#film">Watch it</a><a href="#ask">Say hello</a></nav>
     </div>
-    <h1>Put the phone down. Pick something up.</h1>
-    <p>Solid Things makes real things for the real world. The bit with mud, mates and mugs of tea.</p>
+    <h1>Your stuff is nearly brilliant. We make the missing bit.</h1>
+    <p>Solid, useful things that fix one annoying problem each. No app. No charger. No &ldquo;please update your firmware&rdquo;.</p>
+    <p class="go"><a class="btn" href="#ask">Tell us what&rsquo;s annoying you</a></p>
   </div>
 </header>
 
 <main>
+  <section class="letter"><div class="in narrow">
+    <h2>Here&rsquo;s a daft thing.</h2>
+    <p>You can order dinner, a taxi and a mortgage from your phone.</p>
+    <p>But the shelf still won&rsquo;t stay up.</p>
+    <p>The table is still in the wrong place. The clip that came in the box still snapped in a week. So you do what we all do. You tape it. You wedge it. You swear at it.</p>
+    <p>Then you sit down, pick up your phone, and lose forty minutes.</p>
+    <p class="big">You don&rsquo;t need another app. You need the shelf to stay up.</p>
+    <p>That&rsquo;s the whole company. We find the bit that should have been in the box, and we make it.</p>
+  </div></section>
+
   <section class="say"><div class="in">
-    <h2>Nobody ever framed a screenshot.</h2>
-    <p>The good stuff doesn't happen in your pocket. It's the game that goes on too long. The thing you fixed together. The story that gets worse every time it's told. It never makes the highlights. It is the highlights.</p>
-    <p>We make solid, useful things for that part of your life. They don't need charging, updating or your email address. They don't want your attention. They'd rather you had it back.</p>
+    <h2>Five rules. We wrote them down so you can hold us to them.</h2>
+    <ol class="rules">
+      <li><b>One thing. One problem.</b><span>If we can&rsquo;t say what it fixes in a sentence, we don&rsquo;t make it.</span></li>
+      <li><b>No screens.</b><span>If it needs a password, it isn&rsquo;t one of ours.</span></li>
+      <li><b>You go first.</b><span>We show you the idea before it exists. Enough of you want it? We make it. You don&rsquo;t? Bin. No hard feelings.</span></li>
+      <li><b>We tell you the catch.</b><span>Every product page will say what it won&rsquo;t do. There&rsquo;s always something.</span></li>
+      <li><b>Better than it came.</b><span>If it doesn&rsquo;t make the thing you own better, it has no business in your house.</span></li>
+    </ol>
   </div></section>
 
   <section class="plain"><div class="in">
-    <h2>Best seen with both eyes.</h2>
+    <h2>It was never about the shelf.</h2>
+    <p class="lead">It&rsquo;s about what you get on with once the shelf stops being a problem.</p>
     <div class="pics">
-      <figure class="wide"><div class="ph"><img src="chess.jpg" alt="A hand sets a green printed rook on a chessboard while a grandmother and teenager laugh" loading="lazy"></div><figcaption>Your move.</figcaption></figure>
-      <figure><div class="ph"><img src="bike.jpg" alt="A father and daughter laugh while mending a bicycle, with a dog in the way" loading="lazy"></div><figcaption>No tutorial required. Probably.</figcaption></figure>
-      <figure><div class="ph"><img src="fire.jpg" alt="Four friends laugh around a fire on an allotment" loading="lazy"></div><figcaption>Four people. Full signal.</figcaption></figure>
+      <figure class="wide"><div class="ph"><img src="chess.jpg" alt="A hand sets a green printed rook on a chessboard while a grandmother and teenager laugh" loading="lazy"></div><figcaption>Loser makes the tea. Nan hasn&rsquo;t made the tea since March.</figcaption></figure>
+      <figure><div class="ph"><img src="bike.jpg" alt="A father and daughter laugh while mending a bicycle, with a dog in the way" loading="lazy"></div><figcaption>A ten-minute job. Two hours, so far.</figcaption></figure>
+      <figure><div class="ph"><img src="fire.jpg" alt="Four friends laugh around a fire on an allotment" loading="lazy"></div><figcaption>The original group chat.</figcaption></figure>
     </div>
   </div></section>
 
   <section class="plain" id="film" style="padding-top:0"><div class="in">
-    <h2>Seventeen seconds. Then off you go.</h2>
+    <h2>Seventeen seconds. Then you can go.</h2>
     <video class="film" src="film.mp4" poster="tin.jpg" controls playsinline preload="none" aria-label="Solid Things film: a phone goes in a tin, a chess rook is printed layer by layer, and people play"></video>
+  </div></section>
+
+  <section class="plain" style="padding-top:0"><div class="in">
+    <h2>What we&rsquo;re working on.</h2>
+    <ul class="bench">
+      <li><b>The shelf that keeps its magnets</b><span>For the little figures that tell kids stories. Parents reviewing shop-bought shelves say the magnets drop off. A loose magnet near a toddler is nobody&rsquo;s idea of a story. We want the steel sealed inside, so there&rsquo;s nothing to drop. <em>The catch: it&rsquo;s a drawing so far.</em></span></li>
+      <li><b>The table where there isn&rsquo;t one</b><span>Folds down for breakfast and a hand of cards. Folds away before it annoys anyone. <em>The catch: our first version was too heavy. We&rsquo;re putting it on a diet.</em></span></li>
+    </ul>
+    <p class="lead" style="margin-top:26px">Nothing&rsquo;s for sale yet. You&rsquo;re early. It&rsquo;s the best time to boss us about.</p>
   </div></section>
 
   <section class="plain" style="padding-top:0"><div class="in made">
     <img src="rook.jpg" alt="A green chess rook with fine printed layer lines" loading="lazy">
     <div>
-      <h2>Made when someone wants it.</h2>
-      <p>We start with a proper grumble: something you own that's nearly right. We design the fix in Britain and show it to you first.</p>
-      <p>If enough of you want it, we'll print it, one thin layer at a time. If you don't, we won't. The world has enough tat.</p>
+      <h2>&ldquo;Hang on. Isn&rsquo;t this AI?&rdquo;</h2>
+      <p>Bits of it, yes. AI reads the bad reviews so nobody has to. It also made these pictures, because we haven&rsquo;t got a product to photograph yet.</p>
+      <p>But you can&rsquo;t put your tea on a robot. So the products will be real: designed in Britain, 3D-printed one thin layer at a time, and heavy enough to drop on your foot.</p>
     </div>
   </div></section>
 
-  <section class="plain" style="padding-top:0"><div class="in">
-    <h2>On the bench.</h2>
-    <ul class="bench">
-      <li><b>A shelf for story figures</b><span>For the little characters that tell kids stories without a screen. We want nothing on it that can come loose.</span></li>
-      <li><b>A table where there isn't one</b><span>Folds down for breakfast, maps and cards. Folds away when you're done.</span></li>
-    </ul>
-    <p style="color:var(--muted)">Still being designed. Not for sale yet.</p>
-  </div></section>
-
   <section class="ask" id="ask"><div class="in">
-    <h2>What do you own that's nearly right?</h2>
+    <h2>What&rsquo;s the most annoying thing you own?</h2>
+    <p>One line is plenty. &ldquo;My bin lid.&rdquo; &ldquo;Every tent peg, ever.&rdquo; The best grumble might be the next thing we make.</p>
     <a href="mailto:hello@solidthings.co.uk">hello@solidthings.co.uk</a>
   </div></section>
 </main>
